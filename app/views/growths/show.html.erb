@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @growth.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @growth.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_growth_path(@growth) %> |
+<%= link_to 'Back', growths_path %>

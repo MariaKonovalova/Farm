@@ -1,0 +1,23 @@
+<h1>Listing element_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @element_types.each do |element_type| %>
+  <tr>
+    <td><%= element_type.name %></td>
+    <td><%= link_to 'Show', element_type %></td>
+    <td><%= link_to 'Edit', edit_element_type_path(element_type) %></td>
+    <td><%= link_to 'Destroy', element_type, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Element type', new_element_type_path %>

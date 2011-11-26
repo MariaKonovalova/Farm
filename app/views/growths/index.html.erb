@@ -1,0 +1,25 @@
+<h1>Listing growths</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @growths.each do |growth| %>
+  <tr>
+    <td><%= growth.id %></td>
+    <td><%= growth.name %></td>
+    <td><%= link_to 'Show', growth %></td>
+    <td><%= link_to 'Edit', edit_growth_path(growth) %></td>
+    <td><%= link_to 'Destroy', growth, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Growth', new_growth_path %>

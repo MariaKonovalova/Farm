@@ -1,0 +1,33 @@
+<h1>Listing plants</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Field</th>
+    <th>X</th>
+    <th>Y</th>
+    <th>Type</th>
+    <th>Process</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @plants.each do |plant| %>
+  <tr>
+    <td><%= plant.id %></td>
+    <td><%= plant.field_id %></td>
+    <td><%= plant.x %></td>
+    <td><%= plant.y %></td>
+    <td><%= plant.type_id %></td>
+    <td><%= plant.process_id %></td>
+    <td><%= link_to 'Show', plant %></td>
+    <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
+    <td><%= link_to 'Destroy', plant, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Plant', new_plant_path %>
