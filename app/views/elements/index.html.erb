@@ -2,15 +2,17 @@
 
 <table>
   <tr>
-    <th>Url swf</th>
-    <th></th>
-    <th></th>
+    <th>Url picture</th>
+    <th>Element_type_id</th>
+    <th>Growth_id</th>
     <th></th>
   </tr>
 
 <% @elements.each do |element| %>
   <tr>
-    <td><%= element.url_swf %></td>
+    <td><%= element.url_pic %></td>
+    <td><%= element.element_type_id %></td>
+    <td><%= element.growth_id %></td>
     <td><%= link_to 'Show', element %></td>
     <td><%= link_to 'Edit', edit_element_path(element) %></td>
     <td><%= link_to 'Destroy', element, confirm: 'Are you sure?', method: :delete %></td>

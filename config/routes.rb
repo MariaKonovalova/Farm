@@ -1,11 +1,9 @@
 Farm::Application.routes.draw do
+  resources :growth_stages
+
   resources :elements
 
   resources :element_types
-
-  resources :plant_swfs
-
-  resources :plant_types
 
   resources :growths
 
@@ -14,8 +12,6 @@ Farm::Application.routes.draw do
   resources :fields
 
   resources :users
-
-  resources :magazines
 
   #connect ':controller/:action/:id'
   #connect ':controller/:action/:id.:format'
@@ -69,7 +65,7 @@ Farm::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'say#hello'
+  #root :to => 'say#hello'
 
   # See how all your routes lay out with "rake routes"
 

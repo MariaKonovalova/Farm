@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PlantSwfTest < ActiveSupport::TestCase
+class GrowthStageTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

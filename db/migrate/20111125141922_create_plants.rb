@@ -4,7 +4,8 @@ class CreatePlants < ActiveRecord::Migration
       t.references :field
       t.integer :x
       t.integer :y
-      t.references :element
+      t.references :element_type
+      t.references :growth_stage, :default => 1
 
       t.timestamps
     end

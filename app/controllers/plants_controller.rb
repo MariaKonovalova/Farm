@@ -23,6 +23,7 @@ class PlantsController < ApplicationController
 
   # GET /plants/new
   # GET /plants/new.json
+=begin
   def new
     @plant = Plant.new
 
@@ -31,6 +32,7 @@ class PlantsController < ApplicationController
       format.json { render json: @plant }
     end
   end
+=end
 
   # GET /plants/1/edit
   def edit
@@ -40,8 +42,18 @@ class PlantsController < ApplicationController
   # POST /plants
   # POST /plants.json
   def create
-    @plant = Plant.new(params[:plant])
+    params[:field_id] = 1
+    params.delete(:action)
+    params.delete(:controller)
+    @plant = Plant.new(params)
 
+    if @plant.save
+      render xml: @plant, status: :created, location: @plant
+    else
+    end
+  end
+
+=begin
     respond_to do |format|
       if @plant.save
         format.html { redirect_to @plant, notice: 'Plant was successfully created.' }
@@ -52,6 +64,7 @@ class PlantsController < ApplicationController
       end
     end
   end
+=end
 
   # PUT /plants/1
   # PUT /plants/1.json

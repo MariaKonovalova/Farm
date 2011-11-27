@@ -10,10 +10,10 @@ class CreateUsers < ActiveRecord::Migration
 
     create_table :fields do |t|
       t.references :user
-      t.integer :zero_x
-      t.integer :zero_y
-      t.integer :size_x
-      t.integer :size_y
+      t.integer :zero_x, :default => 0
+      t.integer :zero_y, :default => 0
+      t.integer :size_x, :default => 60
+      t.integer :size_y, :default => 60
 
       t.timestamps
     end

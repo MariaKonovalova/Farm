@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111126094926) do
+ActiveRecord::Schema.define(:version => 20111126134012) do
 
   create_table "articles", :force => true do |t|
     t.datetime "created_at"
@@ -26,23 +26,23 @@ ActiveRecord::Schema.define(:version => 20111126094926) do
 
   create_table "elements", :force => true do |t|
     t.integer  "element_type_id"
-    t.integer  "growth_id",       :default => 1
-    t.string   "url_swf"
+    t.integer  "growth_id"
+    t.string   "url_pic"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "fields", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "zero_x"
-    t.integer  "zero_y"
-    t.integer  "size_x"
-    t.integer  "size_y"
+    t.integer  "zero_x",     :default => 0
+    t.integer  "zero_y",     :default => 0
+    t.integer  "size_x",     :default => 60
+    t.integer  "size_y",     :default => 60
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "growths", :force => true do |t|
+  create_table "growth_stages", :force => true do |t|
     t.integer  "stage"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -66,7 +66,8 @@ ActiveRecord::Schema.define(:version => 20111126094926) do
     t.integer  "field_id"
     t.integer  "x"
     t.integer  "y"
-    t.integer  "element_id"
+    t.integer  "element_type_id"
+    t.integer  "growth_stage_id", :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
