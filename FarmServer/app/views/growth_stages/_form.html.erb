@@ -1,0 +1,21 @@
+<%= form_for(@growth_stage) do |f| %>
+  <% if @growth_stage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@growth_stage.errors.count, "error") %> prohibited this growth_stage from being saved:</h2>
+
+      <ul>
+      <% @growth_stage.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :stage %><br />
+    <%= f.number_field :stage %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

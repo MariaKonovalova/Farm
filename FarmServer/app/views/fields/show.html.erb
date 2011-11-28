@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @field.id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @field.user_id %>
+</p>
+
+<p>
+  <b>Zero x:</b>
+  <%= @field.zero_x %>
+</p>
+
+<p>
+  <b>Zero y:</b>
+  <%= @field.zero_y %>
+</p>
+
+<p>
+  <b>Size x:</b>
+  <%= @field.size_x %>
+</p>
+
+<p>
+  <b>Size y:</b>
+  <%= @field.size_y %>
+</p>
+
+
+<%= link_to 'Edit', edit_field_path(@field) %> |
+<%= link_to 'Back', fields_path %>

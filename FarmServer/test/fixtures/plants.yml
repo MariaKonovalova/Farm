@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  field_id: 1
+  x: 1
+  y: 1
+  type_id: 1
+  process_id: 1
+
+two:
+  id: 1
+  field_id: 1
+  x: 1
+  y: 1
+  type_id: 1
+  process_id: 1
