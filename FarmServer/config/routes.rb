@@ -1,17 +1,17 @@
 Farm::Application.routes.draw do
+=begin
   resources :growth_stages
-
   resources :elements
-
   resources :element_types
-
   resources :growths
-
-  resources :plants
-
   resources :fields
-
   resources :users
+=end
+
+  resources :session, :only => [:create, :destroy]
+  resources :plants, :only => [:create]
+  get 'plants/growth_all'
+  match 'plants/:id' => 'plants#destroy'
 
   #connect ':controller/:action/:id'
   #connect ':controller/:action/:id.:format'

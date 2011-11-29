@@ -1,8 +1,8 @@
 class SessionController
   # To change this template use File | Settings | File Templates.
   def create
-    user = User.authenticate(params[:session][:email],
-                              params[:session][:password])
+    user = User.authenticate(params[:email],
+                              params[:password])
     if user.nil?
 
     else
