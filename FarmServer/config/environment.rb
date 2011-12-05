@@ -2,7 +2,7 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
-Farm::Application.initialize!
+FarmServer::Application.initialize!
 
 =begin
 Farm::Application.configure do

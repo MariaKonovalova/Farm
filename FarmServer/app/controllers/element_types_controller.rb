@@ -1,12 +1,21 @@
+require "builder"
 class ElementTypesController < ApplicationController
   # GET /element_types
   # GET /element_types.json
   def index
-    @element_types = ElementType.all
+    begin
+      @element_types = ElementType.select("id, name")
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @element_types }
+      doc = Builder::XmlMarkup.new(:target => out_string = "", :indent => 1)
+      doc.Types{
+        @element_types.each{ |type|
+          doc.Type(type.attributes)
+        }
+      }
+
+      render xml: out_string
+    rescue Exception => exc
+      render xml: error(exc)
     end
   end
 

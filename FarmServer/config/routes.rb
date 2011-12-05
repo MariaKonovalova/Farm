@@ -1,17 +1,31 @@
-Farm::Application.routes.draw do
+FarmServer::Application.routes.draw do
+
+  resources :element_types, :only => [:index]
+  resources :elements, :only => [:index]
+  resources :sessions, :only => [:create, :destroy]
+  resources :plants, :only => [:index, :create]
+
 =begin
-  resources :growth_stages
-  resources :elements
-  resources :element_types
-  resources :growths
-  resources :fields
-  resources :users
+  resources :plants do
+    get 'growth_all', :on => collection
+    #delete '', :on => member
+  end
+
+  resources :picture do
+    get 'download', :on => collection
+  end
 =end
 
-  resources :session, :only => [:create, :destroy]
-  resources :plants, :only => [:create]
-  get 'plants/growth_all'
+  #connect '', :controller => 'plants', :action => 'growth_all', :conditions => { :method => :get }
+
+  #resources :plants, :collection => { :growth_all => :get }
+
+  match 'plants/growth_all' => 'plants#growth_all'
   match 'plants/:id' => 'plants#destroy'
+
+  #get 'plants/:id' => 'plants#destroy'
+  #get 'plants/growth_all' => 'plants#growth_all'
+  #get 'picture/download' => 'picture#download'
 
   #connect ':controller/:action/:id'
   #connect ':controller/:action/:id.:format'

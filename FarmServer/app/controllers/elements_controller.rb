@@ -2,11 +2,19 @@ class ElementsController < ApplicationController
   # GET /elements
   # GET /elements.json
   def index
-    @elements = Element.all
+    begin
+      @elements = Element.select("id, element_type_id, growth_id, url_pic")
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @elements }
+      doc = Builder::XmlMarkup.new(:target => out_string = "", :indent => 1)
+      doc.Elements{
+        @elements.each{ |element|
+          doc.Type(element.attributes)
+        }
+      }
+
+      render xml: out_string
+    rescue Exception => exc
+      render xml: error(exc)
     end
   end
 

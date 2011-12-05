@@ -1,8 +1,8 @@
 # Be sure to restart your server when you modify this file.
 
-Farm::Application.config.session_store :cookie_store, key: '_Farm_session'
+FarmServer::Application.config.session_store :cookie_store, key: '_farm_server_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
-# (create the session table with "rails generate session_migration")
+# (create the sessions table with "rails generate session_migration")
 # FarmServer::Application.config.session_store :active_record_store

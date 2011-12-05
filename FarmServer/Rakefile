@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Farm::Application.load_tasks
+FarmServer::Application.load_tasks
