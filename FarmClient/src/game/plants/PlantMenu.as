@@ -1,8 +1,5 @@
-package game.plants
+﻿package game.plants
 {
-	import fl.motion.easing.Back;
-	import fl.transitions.Tween;
-	
 	import flash.display.Loader;
 	import flash.display.LoaderInfo;
 	import flash.display.MovieClip;
@@ -36,7 +33,6 @@ package game.plants
 		private var arrayIcons : Array = [];
     private var icons : Array = [];
 		private var loader : Loader;
-		private var menuTween : Tween;
     private var iconCancel : MovieClip;
 		
 		public function PlantMenu(color:uint, size:Point, urlIconSWF:String)

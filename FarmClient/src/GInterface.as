@@ -1,4 +1,4 @@
-package 
+﻿package 
 {
 	import flash.display.SimpleButton;
 	import flash.display.Sprite;
@@ -12,8 +12,6 @@ package
 	
 	import global.GlobalVars;
 	import global.ServerQueries;
-	
-	import org.osmf.composition.SerialElement;
 	
 	import ui.buttons.CustomButton;
 	import game.map.MapEditEvent;

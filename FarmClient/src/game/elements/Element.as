@@ -1,4 +1,4 @@
-package game.elements
+﻿package game.elements
 {
   import flash.display.Bitmap;
   import flash.display.Loader;

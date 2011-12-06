@@ -13,19 +13,19 @@ package global
 	public class Server
 	{
 		private var loader : URLLoader;
-    private var _callback : Function = null;
+    		private var _callback : Function = null;
 		
 		public static var instance:Server = new Server();
 		
 		public function getXMl(rUrl:String, 
-							   rMethod:String = "", 
-							   rVars:URLVariables = null,
-                 callback:Function = null):void
+					rMethod:String = "", 
+					rVars:URLVariables = null,
+                 			callback:Function = null) : void
 		{
-      if (callback)
-      {
-        _callback = callback;
-      }
+      			if (callback as Function)
+      			{
+        			_callback = callback;
+      			}
 
 			loader = new URLLoader();
 			var request:URLRequest = new URLRequest(rUrl);
@@ -43,33 +43,33 @@ package global
 			loader.addEventListener(Event.COMPLETE, onComplete);
 			loader.addEventListener(ErrorEvent.ERROR, onError);
 			loader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, onError);
-      loader.addEventListener(IOErrorEvent.IO_ERROR, onError);
+      			loader.addEventListener(IOErrorEvent.IO_ERROR, onError);
       
-      loader.load(request);
+      			loader.load(request);
 		}
-		
+	
 		private function onComplete(e:Event):void
 		{
 			freeListeners();
 
-      if (_callback)
-      {
-        this._callback(new XML(e.target.data));
-      }
+      			if (_callback as Function)
+      			{
+        			this._callback(new XML(e.target.data));
+      			}
 		}
 		
 		private function onError(e:Event):void
 		{
-      freeListeners();
-      trace(e);
+      			freeListeners();
+      			trace(e);
 		}
     
-    private function freeListeners() : void
-    {
-      loader.removeEventListener(Event.COMPLETE, onComplete);
-      loader.removeEventListener(ErrorEvent.ERROR, onError);
-      loader.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, onError);
-      loader.removeEventListener(IOErrorEvent.IO_ERROR, onError);
-    }
+    		private function freeListeners() : void
+    		{
+      			loader.removeEventListener(Event.COMPLETE, onComplete);
+      			loader.removeEventListener(ErrorEvent.ERROR, onError);
+      			loader.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, onError);
+      			loader.removeEventListener(IOErrorEvent.IO_ERROR, onError);
+    		}
 	}
 }

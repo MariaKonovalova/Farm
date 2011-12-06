@@ -1,7 +1,5 @@
-package game.map 
+﻿package game.map 
 {
-	import fl.transitions.Tween;
-	
 	import flash.display.Bitmap;
 	import flash.display.Loader;
 	import flash.display.MovieClip;

@@ -15,9 +15,9 @@ package global
 			if (networkType == ConnectionData.LOCAL)
 			{
 				urlConnection = "http://localhost:3000/";
-				bgFolder = "D:/workspace/FarmClient/data/bg/";
-				iconsFolder = "D:/workspace/FarmClient/data/icons/";
-        plantsFolder = "D:/workspace/FarmClient/data/plants/";
+				bgFolder = "data/bg/";
+				iconsFolder = "data/icons/";
+        plantsFolder = "data/plants/";
 			}
 			else
 			{

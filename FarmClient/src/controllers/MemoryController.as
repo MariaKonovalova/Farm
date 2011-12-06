@@ -1,4 +1,4 @@
-package controllers
+﻿package controllers
 {
   import flash.system.System;
   import flash.utils.ByteArray;
@@ -80,11 +80,11 @@ package controllers
       if (System.totalMemory > mWarningMemoryLimit) 
       {
         doForcedClean();
-        if (mWarningFunction)
+        if (mWarningFunction())
           mWarningFunction();		      
       } else if (System.totalMemory > mCriticalMemoryLimit) 
       {
-        if (mAbortFunction)		      
+        if (mAbortFunction())		      
           mAbortFunction();
         doForcedClean();
       }
